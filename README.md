@@ -2,12 +2,11 @@
 
 Python browser-assisted Indeed scraping experiment with job extraction, CSV output, and logging.
 
-## Repository guide
+## Setup and repository reference
 
-### Contents
+### Project structure
 
 - [Multi_Country_Job_results.csv](Multi_Country_Job_results.csv)
-- [README.md](README.md)
 - [Scraper.py](Scraper.py)
 - [requirements.txt](requirements.txt)
 - [scraper.log](scraper.log)
@@ -40,7 +39,11 @@ Live scraping depends on site permissions, browser availability, current page ma
 
 ### Validation
 
-Reviewed on 2026-10-08. Python syntax checks passed for 1 source files. Syntax validation does not establish runtime correctness or dependency compatibility.
+Audit: 2026-10-08. Repository structure, setup instructions and description were reviewed. 1 existing Python files passed syntax checks; changed files and new regression tests were checked separately. Syntax checks do not establish full runtime correctness. External APIs, live scraping, GUI interaction, notebook training and production deployment were not comprehensively exercised.
+
+### Repository description
+
+The short GitHub description is provided in [REPOSITORY_DESCRIPTION.md](REPOSITORY_DESCRIPTION.md).
 
 ### Contributions
 
