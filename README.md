@@ -1,105 +1,51 @@
 # Restricted-Site-s-Scrapper
 
-## Description
+Python browser-assisted Indeed scraping experiment with job extraction, CSV output, and logging.
 
-This Python script is designed to scrape job listings from Indeed.com for multiple countries and job professions. It utilizes web scraping techniques to extract job information such as job title, company name, location, and job URL. The scraped data is then exported to a CSV file for further analysis.
+## Repository guide
 
-## Features
+### Contents
 
-- Scrapes job listings from Indeed.com for multiple countries
-- Supports multiple job professions
-- Exports results to a CSV file
-- Implements error handling and logging
-- Includes internet connectivity check
-- Uses random delays to avoid overloading the server
+- [Multi_Country_Job_results.csv](Multi_Country_Job_results.csv)
+- [README.md](README.md)
+- [Scraper.py](Scraper.py)
+- [requirements.txt](requirements.txt)
+- [scraper.log](scraper.log)
 
-## Requirements
-
-- Python 3.6+
-- cloudscraper
-- beautifulsoup4
-- pandas
-
-## Installation
-
-1. Clone this repository or download the script.
-2. Install the required packages:
+### Getting started
 
 ```bash
-pip install cloudscraper beautifulsoup4 pandas
+git clone https://github.com/Raimal-Raja/Restricted-Site-s-Scrapper.git
+cd Restricted-Site-s-Scrapper
 ```
 
-## Usage
-
-1. Modify the `domains` dictionary in the `main()` function to include the desired countries and their corresponding Indeed.com URLs.
-2. Adjust the `job_professions` list to include the job titles you want to search for.
-3. Run the script:
+Create and activate a virtual environment, then install the project dependencies:
 
 ```bash
-python job_scraper.py
+python -m venv .venv
+# Linux/macOS: source .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -r "requirements.txt"
 ```
 
-4. The results will be saved in a file named `Multi_Country_Job_results.csv` in the same directory as the script.
+Application entry point:
 
-## Code Explanation
-
-### Imports
-
-```python
-import cloudscraper
-from bs4 import BeautifulSoup
-import pandas as pd
-import time
-import random
-import logging
-import socket
+```bash
+python Scraper.py
 ```
 
-These libraries are used for web scraping (cloudscraper, BeautifulSoup), data manipulation (pandas), timing and randomization (time, random), logging, and network connectivity checks (socket).
+### Configuration and limitations
 
-### Logging Configuration
+Live scraping depends on site permissions, browser availability, current page markup, and anti-bot responses. Passing syntax checks does not verify live collection. Browser-handling code does not guarantee access.
 
-The script sets up logging to both a file (`scraper.log`) and the console, which helps in debugging and monitoring the scraping process.
+### Validation
 
-### Functions
+Reviewed on 2026-10-08. Python syntax checks passed for 1 source files. Syntax validation does not establish runtime correctness or dependency compatibility.
 
-1. `export(results)`: Exports the scraped data to a CSV file.
-2. `internet_on()`: Checks if there's an active internet connection.
-3. `scrape_job(base_url, job_search)`: The main scraping function that extracts job information from a given Indeed.com URL.
-4. `main()`: The main function that orchestrates the scraping process for multiple countries and job professions.
+### Contributions
 
-### Scraping Process
+Describe the issue, reproduction steps, environment, and expected behavior when proposing a change. Keep generated environments, credentials, and unnecessary build artifacts out of new commits.
 
-1. The script iterates through each country and job profession.
-2. For each combination, it constructs the appropriate URL and sends a request using cloudscraper.
-3. The HTML response is parsed using BeautifulSoup to extract job information.
-4. Extracted data is stored in a list of dictionaries.
-5. The process includes error handling and logging for robustness.
+### License
 
-### Data Export
-
-The scraped data is exported to a CSV file named `Multi_Country_Job_results.csv` using pandas.
-
-## Ethical Considerations
-
-When using this scraper, please be mindful of the following:
-
-1. Respect the website's `robots.txt` file and terms of service.
-2. Implement appropriate delays between requests to avoid overloading the server.
-3. Use the data responsibly and in compliance with relevant laws and regulations.
-
-## Related Links and Sources
-
-- [Cloudscraper Documentation](https://github.com/VeNoMouS/cloudscraper)
-- [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Pandas Documentation](https://pandas.pydata.org/docs/)
-- [Indeed.com](https://www.indeed.com/)
-- [Web Scraping Best Practices](https://www.scrapehero.com/how-to-prevent-getting-blacklisted-while-scraping/)
-
-## Disclaimer
-
-This script is for educational purposes only. Make sure to comply with Indeed.com's terms of service and implement appropriate rate limiting to avoid potential IP bans.
-
-## License
-
-This project is open-source and available under the MIT License.
+No top-level license file was found during this review.
